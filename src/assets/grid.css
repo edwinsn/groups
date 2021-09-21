@@ -1,0 +1,49 @@
+#decrease{
+    margin-top: 1vh;
+}
+
+#gridContainer {
+    flex-grow: 2;
+    overflow: scroll;
+}
+
+#structure-selector {
+    background-color: white;
+    padding: 1.3vh 10%;
+    border-radius: 17px;
+    top: 3vh;
+    position: fixed;
+}
+
+#grid {
+    display: grid;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 1px 1px 4px 1px rgb(211, 211, 211);
+    border-radius: 7px;
+    background-color: rgb(212, 212, 212);
+    grid-gap: 1px;
+    overflow: hidden;
+}
+
+#grid>* {
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.changeorder {
+    align-self: baseline;
+    height: 8vh;
+    width: 8vh;
+    font-size: 1.2em;
+    border: 1px dashed black;
+    border-radius: 8px;
+    margin-left: 1.5vh;
+    background-color: rgb(243, 243, 243);
+}
+.changeorder:hover{
+    background-color: rgb(226, 226, 226);
+}

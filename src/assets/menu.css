@@ -1,0 +1,7 @@
+#menu{
+    flex-grow: 1;
+    border-left: 2px solid #F1F1F1;
+    box-shadow: -1px 0px 1px 0px rgb(226, 226, 226);
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
