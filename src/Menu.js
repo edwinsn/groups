@@ -11,7 +11,7 @@ export default function Menu() {
 
     let inversesRight, inversesLeft = false
     let conmutativity = false
-    let modulativityRight, modulativityLeft = false
+    let modulativityRight, eRight, modulativityLeft, eLeft = false
     let asociativity = false
     let isCyclicRight, isCyclicLeft = false
     let generatorRight, generatorLeft
@@ -25,8 +25,10 @@ export default function Menu() {
         inversesRight = areInverses(table)
         inversesLeft = areInverses(transposedTable)
         conmutativity = isCommutative(table)
-        modulativityRight = findE(table) !== false
-        modulativityLeft = findE(transposedTable) !== false
+        eLeft = findE(table)
+        eRight = findE(transposedTable)
+        modulativityRight = eLeft !== false
+        modulativityLeft = eRight !== false
         asociativity = isAssociative(table)
         generatorRight = cyclic(table)
         generatorLeft = cyclic(transposedTable)
@@ -44,15 +46,40 @@ export default function Menu() {
                 type="radio"></input> Asociatividad</p>
             <p><input checked={modulativityRight || modulativityLeft}
                 readOnly
-                type="radio"></input>Modulatividad {modulativityRight?"a la derecha ":""}{modulativityLeft?"a la izquierda":""}</p>
+                type="radio">
+            </input>
+                <span>Modulatividad
+                    {((!modulativityRight || !modulativityLeft) && (modulativityLeft || modulativityLeft)) &&
+                        <span>
+                            {modulativityLeft ? ` (←{${eLeft}})` : ` (→{${eRight}})`}
+                        </span>
+                    }
+                </span>
+            </p>
+
             <p><input checked={inversesRight || inversesLeft}
                 readOnly
-                type="radio"></input>Inversos {inversesRight?"A la Derecha":""} { inversesLeft?"A la izquierda":""}</p>
-                {/*depurar tabla*/}
+                type="radio"></input>
+                <span>Inversos
+                    {((!inversesRight || !inversesLeft) && (inversesRight || inversesLeft)) &&
+                        <span>
+                            {inversesRight ? " →" : " →"}
+                        </span>
+                    }
+                </span>
+            </p>
+            {/*depurar tabla*/}
             <h2>Otras propiedades</h2>
             <p><input checked={isCyclicRight || isCyclicLeft}
                 readOnly
-                type="radio"></input>Cíclico {generatorRight?`a la derecha: ${generatorRight}`:""} {generatorLeft?`a la izquierda: ${generatorLeft}`:""}</p>
+                type="radio"></input>
+                <span>Cíclico
+                    {(!isCyclicLeft || !isCyclicRight) &&
+                        <span>
+                            {generatorRight ? `${generatorRight}` : `${generatorLeft}`}
+                        </span>
+                    }</span>
+            </p>
             <p><input checked={conmutativity}
                 readOnly
                 type="radio"></input>Abeliano</p>

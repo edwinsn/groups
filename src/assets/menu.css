@@ -4,4 +4,5 @@
     box-shadow: -1px 0px 3px 0px var(--gray-shadow);
     padding: 10px 15px;
     box-sizing: border-box;
+    min-width: 30%;
 }
