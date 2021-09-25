@@ -19,6 +19,7 @@ export default function Menu() {
 
     if (tableIsComplete) {
 
+
         transposedTable = transpose(table)
 
         inversesRight = areInverses(table)
@@ -31,6 +32,7 @@ export default function Menu() {
         generatorLeft = cyclic(transposedTable)
         isCyclicRight = generatorRight !== false
         isCyclicLeft = generatorLeft !== false
+
     }
 
     return (

@@ -1,10 +1,34 @@
-#decrease{
+#decrease {
     margin-top: 1vh;
 }
 
-#gridContainer {
+#format {
+    background-color: rgb(243, 243, 243);
+    box-shadow: 1px 1px 2px 1px var(--gray-shadow);
+    border-radius: 8px;
+    height: 8vh;
+    border: none;
+    text-align: center;
+}
+
+#gridand-selector-container {
     flex-grow: 2;
+    flex-basis: 66%;
     overflow: scroll;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#grid-container {
+    flex-grow: 1;
+}
+
+#options {
+    padding-left: 1.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #structure-selector {
@@ -12,17 +36,18 @@
     padding: 1.3vh 10%;
     border-radius: 17px;
     top: 3vh;
-    position: fixed;
+    left: 0;
+    margin: 0 auto
 }
 
 #grid {
     display: grid;
-    background-color: rgb(241, 241, 241);
-    box-shadow: 1px 1px 4px 1px rgb(211, 211, 211);
+    box-shadow: 1px 1px 4px 1px var(--gray-shadow);
     border-radius: 7px;
     background-color: rgb(212, 212, 212);
     grid-gap: 1px;
     overflow: hidden;
+    padding-right: 1px;
 }
 
 #grid>* {
@@ -41,9 +66,10 @@
     font-size: 1.2em;
     border: 1px dashed black;
     border-radius: 8px;
-    margin-left: 1.5vh;
     background-color: rgb(243, 243, 243);
+    box-shadow: 1px 1px 2px 1px var(--gray-shadow);
 }
-.changeorder:hover{
+
+.changeorder:hover {
     background-color: rgb(226, 226, 226);
 }

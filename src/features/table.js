@@ -6,16 +6,20 @@ export const tableSlice = createSlice({
         setTable: (state, action) => {
             let { i, j, result, order } = action.payload
             state.value.elements[i] = state.value.elements[i] ? state.value.elements[i] : []
-            state.value.elements[i][j] = result.charCodeAt()-97
+            state.value.elements[i][j] = result
 
-            if (result !== "") state.value.nelements++
-            else state.value.nelements--
             state.value.order = order
 
-            state.value.isComplete = state.value.order ** 2 === state.value.nelements
+            let count = 0
+            state.value.nelements = state.value.elements.forEach(row => { row.forEach(_ => count++) });
+            state.value.isComplete = state.value.order ** 2 === count
+
+        },
+        resetTable: (state) => {
+            state.value.elements = []
         }
     }
 })
 
-export const { setTable } = tableSlice.actions
+export const { setTable, resetTable } = tableSlice.actions
 export default tableSlice.reducer

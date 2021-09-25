@@ -8,8 +8,12 @@
     display: flex;
 }
 
-.centered-column{
+.centered{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+:root{
+    --gray-shadow:rgb(199, 199, 199);
 }
